@@ -1,0 +1,17 @@
+name: ${project.name}
+version: ${project.version}
+authors: [Undermon]
+main: me.undermon.sunrise.Main
+api-version: 1.18
+
+commands:
+   sunrise:
+      aliases: sr
+      usage: "Usage: /<command>"
+      permission: sunrise.reload
+      permission-message: You do not have permission to use this command.
+   
+permission:
+   sunrise.reload:
+      default: op
+      description: Can reload Sunrise configuration file
