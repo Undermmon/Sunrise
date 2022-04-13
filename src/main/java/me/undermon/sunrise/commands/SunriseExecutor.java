@@ -17,7 +17,7 @@ public class SunriseExecutor implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length == 1 && args[0].equals("reload")) {
 			this.configuration.reload();
-			sender.sendMessage("Sunrise configuration reload");
+			sender.sendMessage("Sunrise configuration reloaded");
 			
 			return true;
 		} else {
