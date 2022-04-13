@@ -8,8 +8,8 @@ import org.bukkit.plugin.Plugin;
 import org.javatuples.Pair;
 
 public class Configuration {
-	private List<Pair<Material, Integer>> openSkyMaterials;
-	private List<Pair<Material, Integer>> wetFarmlandMaterials;
+	private List<Pair<Material, Integer>> skylightEntries;
+	private List<Pair<Material, Integer>> farmlandMoistureEntries;
 	private Plugin plugin;
 
 	public Configuration(Plugin plugin) {
@@ -24,28 +24,32 @@ public class Configuration {
 	 */
 	public void reload() {
 		this.plugin.reloadConfig();
-		this.openSkyMaterials = this.parseOpenSkyMaterials();
-		this.wetFarmlandMaterials = this.parseWetFarmlandMaterials();
+		this.skylightEntries = this.parseMinimalSkylightEntries();
+		this.farmlandMoistureEntries = this.parseMinimalFarmlandMoistureEntries();
 
 	}
 	
 	/**
-	 * Get list of materials that should n
+	 * Get list of entries with a minimal skylight level to grow.
 	 * 
-	 * @return {@link List} of {@link Pair}, where the first element is the
-	 * {@link Material}, and the second is an int as the minimal sky
-	 * light level
+	 * @return {@link List} of {@link Pair}, each representing an entry, where the first
+	 * element is the {@link Material} this entry represents, and the second is an int as 
+	 * the minimal sky light level.
 	 */
-	public List<Pair<Material, Integer>> openSkyCrops() {
-		return new ArrayList<>(this.openSkyMaterials);
+	public List<Pair<Material, Integer>> minimalSkylightEntries() {
+		return new ArrayList<>(this.skylightEntries);
 	}
 
 	/**
-	 * @return {@link List} of {@link Pair}, where the first element is the
-	 * {@link Material}, and the second is an int as the minimal moisture level
+	 * Get list of entries in which the farmland where the material is planted on needs a
+	 * minimal moisture level to grow.
+	 * 
+	 * @return {@link List} of {@link Pair} each representing an entry, where the first
+	 * element is the {@link Material} this entry represents, and the second is an int as 
+	 * the minimal moisture level.
 	 */
-	public List<Pair<Material, Integer>> wetFarmlandCrops() {
-		return new ArrayList<>(this.wetFarmlandMaterials);
+	public List<Pair<Material, Integer>> minimalFarmlandMoistureEntries() {
+		return new ArrayList<>(this.farmlandMoistureEntries);
 	}
 
 	public boolean netherWartGrowsOnlyInNether() {
@@ -56,14 +60,14 @@ public class Configuration {
 		return this.plugin.getConfig().getBoolean("chorus_fruit_only_grows_on_end");
 	}
 
-	private List<Pair<Material, Integer>> parseOpenSkyMaterials() {
+	private List<Pair<Material, Integer>> parseMinimalSkylightEntries() {
 		return this.parseLines(
-				this.plugin.getConfig().getStringList("blocks_that_need_sky_light"));
+				this.plugin.getConfig().getStringList("blocks_with_minimal_skylight_to_grow"));
 	}
 	
-	private List<Pair<Material, Integer>> parseWetFarmlandMaterials() {
+	private List<Pair<Material, Integer>> parseMinimalFarmlandMoistureEntries() {
 		return this.parseLines(
-				this.plugin.getConfig().getStringList("crops_that_need_moist_farmland"));
+				this.plugin.getConfig().getStringList("blocks_with_minimal_farmland_moisture_to_grow"));
 	}
 	
 	private List<Pair<Material, Integer>> parseLines(List<String> lines) {

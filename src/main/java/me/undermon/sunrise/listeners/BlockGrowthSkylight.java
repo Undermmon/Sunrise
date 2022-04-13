@@ -20,7 +20,7 @@ public class BlockGrowthSkylight implements Listener {
 	private void onBlockGrow(BlockGrowEvent event) {
 		Block block = event.getBlock();
 		
-		for (Pair<Material, Integer> pair : this.configuration.openSkyCrops()) {
+		for (Pair<Material, Integer> pair : this.configuration.minimalSkylightEntries()) {
 			if (pair.getValue0().equals(block.getType())) {
 				if (block.getLightFromSky() < pair.getValue1()) {
 					event.setCancelled(true);

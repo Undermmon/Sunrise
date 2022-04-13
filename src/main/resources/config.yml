@@ -1,36 +1,36 @@
 chorus_fruit_only_grows_on_end: true
 nether_wart_only_grows_on_nether: true
 
-# For materials see: https://papermc.io/javadocs/paper/1.18/org/bukkit/Material.html
+# for materials see: https://papermc.io/javadocs/paper/1.18/org/bukkit/material.html
 
-# <Material> <Moisture necessary>
-# Moisture level goes from 0 to 7, being 0 the driest.
-crops_that_need_moist_farmland:
-   - BEETROOT 7
-   - CARROT 7
-   - MELON_STEM 7
-   - POTATO 7
-   - PUMPKIN_STEM 7
-   - WHEAT 7
+# <material> <moisture necessary>
+# moisture level goes from 0 to 7, being 0 the driest.
+blocks_with_minimal_farmland_moisture_to_grow:
+   - beetroot 7
+   - carrot 7
+   - melon_stem 7
+   - potato 7
+   - pumpkin_stem 7
+   - wheat 7
 
-# <Material> <Sky light necessary>
-# Skylight goes from 0 to 15, being 0 the darkest.
-blocks_that_need_sky_light:
-   - BAMBOO 15
-   - BAMBOO_SAPLING 15
-   - BEETROOT 15
-   - CARROT 15
-   - MELON_STEM 15
-   - POTATO 15
-   - PUMPKIN_STEM 15
-   - WHEAT 15
-   - CACTUS 15
-   - SUGAR_CANE 15
-   - SWEET_BERRY_BUSH 15
-   - COCOA 8
-   - ACACIA_SAPLING 15
-   - BIRCH_SAPLING 15
-   - DARK_OAK_SAPLING 15
-   - JUNGLE_SAPLING 15
-   - OAK_SAPLING 15
-   - SPRUCE_SAPLING 15
+# <material> <sky light necessary>
+# skylight goes from 0 to 15, being 0 the darkest.
+blocks_with_minimal_skylight_to_grow:
+   - bamboo 15
+   - bamboo_sapling 15
+   - beetroot 15
+   - carrot 15
+   - melon_stem 15
+   - potato 15
+   - pumpkin_stem 15
+   - wheat 15
+   - cactus 15
+   - sugar_cane 15
+   - sweet_berry_bush 15
+   - cocoa 8
+   - acacia_sapling 15
+   - birch_sapling 15
+   - dark_oak_sapling 15
+   - jungle_sapling 15
+   - oak_sapling 15
+   - spruce_sapling 15

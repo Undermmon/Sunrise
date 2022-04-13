@@ -23,7 +23,7 @@ public class BlockGrowMoisture implements Listener {
 	private void onBlockGrow(BlockGrowEvent event) {
 		Block block = event.getBlock();
 		
-		for (Pair<Material, Integer> pair : this.configuration.wetFarmlandCrops()) {
+		for (Pair<Material, Integer> pair : this.configuration.minimalFarmlandMoistureEntries()) {
 			if (pair.getValue0().equals(block.getType())) {
 				Block blockBellow = block.getRelative(BlockFace.DOWN);
 
