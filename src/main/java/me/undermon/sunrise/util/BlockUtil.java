@@ -12,7 +12,6 @@ public class BlockUtil {
 		if (blockBellow.getBlockData() instanceof Farmland) {
 			Farmland farmland = (Farmland) blockBellow.getBlockData();
 
-			System.out.println("MOISTURE BLOCK/LEVEL: " +  block.getType() + " / " + farmland.getMoisture());
 			return farmland.getMoisture();
 		} else {
 			return 0;
