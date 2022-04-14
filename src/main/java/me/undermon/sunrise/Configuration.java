@@ -59,6 +59,10 @@ public class Configuration {
 	public boolean chorusPlantGrowsOnlyInEnd() {
 		return this.plugin.getConfig().getBoolean("chorus_fruit_only_grows_on_end");
 	}
+	
+	public boolean hardcoreBucket() {
+		return this.plugin.getConfig().getBoolean("hardcore_bucket");
+	}
 
 	private List<Pair<Material, Integer>> parseMinimalSkylightEntries() {
 		return this.parseLines(

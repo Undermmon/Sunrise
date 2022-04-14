@@ -9,6 +9,7 @@ import me.undermon.sunrise.listeners.BlockGrowMoisture;
 import me.undermon.sunrise.listeners.BlockGrowthSkylight;
 import me.undermon.sunrise.listeners.ChorusFlowerGrowth;
 import me.undermon.sunrise.listeners.NetherWartGrowth;
+import me.undermon.sunrise.listeners.PlayerBucketEmpty;
 
 public class Main extends JavaPlugin {
 	private Configuration configuration;
@@ -38,7 +39,8 @@ public class Main extends JavaPlugin {
 				new ChorusFlowerGrowth(this.configuration),
 				new NetherWartGrowth(this.configuration),
 				new BlockGrowMoisture(this.configuration),
-				new BlockGrowthSkylight(this.configuration)
+				new BlockGrowthSkylight(this.configuration),
+				new PlayerBucketEmpty(this.configuration)
 		};
 		
 		for (Listener listener : listeners) {
