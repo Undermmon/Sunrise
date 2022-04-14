@@ -21,8 +21,10 @@ blocks_with_minimal_skylight_to_grow:
    - beetroot 15
    - carrot 15
    - melon_stem 15
+   - melon 15
    - potato 15
    - pumpkin_stem 15
+   - pumpkin 15
    - wheat 15
    - cactus 15
    - sugar_cane 15

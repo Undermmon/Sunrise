@@ -1,7 +1,6 @@
 package me.undermon.sunrise.listeners;
 
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockGrowEvent;
@@ -18,11 +17,12 @@ public class BlockGrowthSkylight implements Listener {
 
 	@EventHandler(ignoreCancelled = true)
 	private void onBlockGrow(BlockGrowEvent event) {
-		Block block = event.getBlock();
-		
+		int skylight = event.getNewState().getBlock().getLightFromSky();
+		Material material = event.getNewState().getType();
+				
 		for (Pair<Material, Integer> pair : this.configuration.minimalSkylightEntries()) {
-			if (pair.getValue0().equals(block.getType())) {
-				if (block.getLightFromSky() < pair.getValue1()) {
+			if (pair.getValue0().equals(material)) {
+				if (skylight < pair.getValue1()) {
 					event.setCancelled(true);
 				}
 			}
