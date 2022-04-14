@@ -1,6 +1,8 @@
 package me.undermon.sunrise.listeners;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,7 +23,7 @@ public class ChorusFlowerGrowth implements Listener {
 		
 		if (this.configuration.chorusPlantGrowsOnlyInEnd()) {
 			if (block.getType() == Material.CHORUS_FLOWER) {
-				if (!block.getWorld().getName().endsWith("_the_end")) {
+				if (!block.getWorld().equals(Bukkit.getWorld(NamespacedKey.minecraft("the_end")))) {
 					event.setCancelled(true);
 				} 
 			}
