@@ -17,24 +17,25 @@ import org.bukkit.event.block.BlockGrowEvent;
 import me.undermon.sunrise.Configuration;
 
 public class NetherWartGrowth implements Listener {
-	private Configuration configuration;
+    
+    private Configuration configuration;
 
-	public NetherWartGrowth(Configuration configuration) {
-		this.configuration = configuration;
-	}
+    public NetherWartGrowth(Configuration configuration) {
+        this.configuration = configuration;
+    }
 
-	@EventHandler(ignoreCancelled = true)
-	private void onBlockGrow(BlockGrowEvent event) {
-		if (this.configuration.netherWartGrowsOnlyInNether()) {
-			Block block = event.getBlock();
-			
-			if (block.getType() == Material.NETHER_WART) {
-				if (!block.getWorld().equals(Bukkit.getWorld(NamespacedKey.minecraft("the_nether")))) {
-					event.setCancelled(true);
-				} 
-			}
-			
-		}
-	}
+    @EventHandler(ignoreCancelled = true)
+    private void onBlockGrow(BlockGrowEvent event) {
+        if (this.configuration.netherWartGrowsOnlyInNether()) {
+            Block block = event.getBlock();
+
+            if (block.getType() == Material.NETHER_WART) {
+                if (!block.getWorld().equals(Bukkit.getWorld(NamespacedKey.minecraft("the_nether")))) {
+                    event.setCancelled(true);
+                }
+            }
+
+        }
+    }
 
 }

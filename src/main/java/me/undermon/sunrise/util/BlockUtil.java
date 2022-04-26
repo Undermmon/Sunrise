@@ -11,18 +11,17 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.type.Farmland;
 
 public class BlockUtil {
-	
-	public static int farmlandMoisture(Block  block) {
-		Block blockBellow = block.getRelative(BlockFace.DOWN);
 
-		if (blockBellow.getBlockData() instanceof Farmland) {
-			Farmland farmland = (Farmland) blockBellow.getBlockData();
+    public static int farmlandMoisture(Block block) {
+        Block blockBellow = block.getRelative(BlockFace.DOWN);
 
-			return farmland.getMoisture();
-		} else {
-			return 0;
-		}
-	}
-	
+        if (blockBellow.getBlockData() instanceof Farmland) {
+            Farmland farmland = (Farmland) blockBellow.getBlockData();
+
+            return farmland.getMoisture();
+        } else {
+            return 0;
+        }
+    }
 
 }
