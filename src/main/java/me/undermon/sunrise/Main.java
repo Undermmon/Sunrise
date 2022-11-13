@@ -13,6 +13,7 @@ import me.undermon.sunrise.commands.SunriseExecutor;
 import me.undermon.sunrise.commands.SunriseTabCompleter;
 import me.undermon.sunrise.listeners.BlockGrowMoisture;
 import me.undermon.sunrise.listeners.BlockGrowthSkylight;
+import me.undermon.sunrise.listeners.BonemealUsage;
 import me.undermon.sunrise.listeners.ChorusFlowerGrowth;
 import me.undermon.sunrise.listeners.NetherWartGrowth;
 import me.undermon.sunrise.listeners.PlayerBucketEmpty;
@@ -46,7 +47,8 @@ public class Main extends JavaPlugin {
             new NetherWartGrowth(this.configuration),
             new BlockGrowMoisture(this.configuration),
             new BlockGrowthSkylight(this.configuration),
-            new PlayerBucketEmpty(this.configuration)
+            new PlayerBucketEmpty(this.configuration),
+            new BonemealUsage(this.configuration)
         };
 
         for (Listener listener : listeners) {

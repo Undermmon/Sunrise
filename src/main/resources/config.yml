@@ -1,5 +1,7 @@
 hardcore_bucket: true
 
+disable_bonemeal: true
+
 chorus_fruit_only_grows_on_end: true
 nether_wart_only_grows_on_nether: true
 
