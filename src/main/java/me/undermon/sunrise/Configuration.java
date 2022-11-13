@@ -91,10 +91,10 @@ public class Configuration {
 			String[] args = line.split(" ");
 
 			Material material = Material.valueOf(args[0].toUpperCase());
-			int integer = Integer.valueOf(args[1]);
+			int integer = Integer.parseInt(args[1]);
 
 			pairList.add(new Pair<>(material, integer));
-	}
+		}
 
 		return pairList;
 	}
