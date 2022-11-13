@@ -40,3 +40,4 @@ blocks_with_minimal_skylight_to_grow:
    - jungle_sapling 15
    - oak_sapling 15
    - spruce_sapling 15
+   - mangrove_propagule 15
