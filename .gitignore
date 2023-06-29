@@ -16,6 +16,7 @@ settings/
 .settings/
 
 # VSCodium
+*.code-workspace
 .vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
